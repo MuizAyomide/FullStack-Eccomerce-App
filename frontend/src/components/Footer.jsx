@@ -10,8 +10,8 @@ const Footer = () => {
           <p className="w-full md:w-2/3 text-gray-600">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque
             rerum expedita corporis inventore cum, eveniet ab asperiores! At,
-            nisi earudolor sit, amet consectetur adipisicing elit. Itaque
-            rerum expedita corporis inventore cum, eveniet ab asperiores! At,
+            nisi earudolor sit, amet consectetur adipisicing elit. Itaque rerum
+            expedita corporis inventore cum, eveniet ab asperiores! At,
           </p>
         </div>
 
@@ -26,9 +26,7 @@ const Footer = () => {
         </div>
 
         <div className="">
-          <p className="text-xl font-medium mb-5">
-            GET IN TOUCH
-          </p>
+          <p className="text-xl font-medium mb-5">GET IN TOUCH</p>
           <ul className="flex flex-col gap-1 text-gray-600">
             <li>+234-708-138-6939</li>
             <li>akinrinolamuiz22@gmail.com</li>
@@ -37,7 +35,8 @@ const Footer = () => {
       </div>
       <div>
         <hr />
-        <p className="py-5 text-sm text-center">Copyright 2024 @ Forever.com - All Rights Reserved.
+        <p className="py-5 text-sm text-center">
+          Copyright 2024 @ Forever.com - All Rights Reserved.
         </p>
       </div>
     </div>
