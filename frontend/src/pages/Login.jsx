@@ -5,7 +5,7 @@ const Login = () => {
 const [currentState, setCurrentState]= useState('Sign Up');
   return (
     <form action="" className='flex flex-col item-center w-[90%] sm:max-w-96 m-auto mt-14 gap-4 text-gray-800'>
-      <div className="inline-flex items-center gap-2 mb-2 mt-10">
+      <div className="inline-flex justify-center items-center gap-2 mb-2 mt-10">
         <p className="prata-regular text-3xl">{currentState}</p>
         <hr className='border-none h-[1.5px] w-8 bg-gray-800'/>
       </div>
