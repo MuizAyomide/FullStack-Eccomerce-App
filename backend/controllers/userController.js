@@ -1,14 +1,37 @@
-import userModel from "../models/userModal";
+import userModel from '../models/userModels.js';
 import validator from "validator";
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 
 const createToken = (id) => {
-    return 
+    return jwt.sign({id}, process.env.JWT_SECRET )
 }
 
 //route for user login
 const loginUser = async (req,res) => {
+
+    try {
+        const {email,password} = req.body;
+
+        const user = await userModel.findOne({email});
+
+        if (!user){
+            return res.json({sucess:false, message:'User does not exists'})
+        }
+
+        const isMatch = await bcrypt.compare(password, user.password);
+
+        if (isMatch) {
+            const token = createToken(user._id)
+            res.json({success:true,token})
+            
+        }
+        else{
+            res.json({success:false,})
+        }
+    } catch (error) {
+        
+    }
 
 }
 
@@ -49,11 +72,15 @@ try {
 
     const user = await newUser.save()
 
-    // const token = 
+    const token = createToken(user._id)
+
+    res.json({seccess: true, token})
 
 
     
 } catch (error) {
+    console.log(error)
+    res.json({success: false, message:error.message})
     
 }
 }
