@@ -11,7 +11,6 @@ const createToken = (id) => {
 const loginUser = async (req, res) => {
   try {
     const { email, password } = req.body;
-    
 
     const user = await userModel.findOne({ email });
 
@@ -21,7 +20,6 @@ const loginUser = async (req, res) => {
 
     const isMatch = await bcrypt.compare(password, user.password);
 
-    
     if (isMatch) {
       const token = createToken(user._id);
       res.json({ success: true, token });
