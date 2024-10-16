@@ -25,7 +25,9 @@ const loginUser = async (req, res) => {
     } else {
       res.json({ success: false });
     }
-  } catch (error) {}
+  } catch (error) {
+    
+  }
 };
 
 //user registration
