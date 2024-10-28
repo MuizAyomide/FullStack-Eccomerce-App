@@ -14,19 +14,19 @@ const loginUser = async (req, res) => {
     const user = await userModel.findOne({ email });
 
     if (!user) {
-      return res.json({ sucess: false, message: "User does not exists" });
+      return res.json({ success: false, message: "User does not exists" });
     }
 
-    
     const isMatch = await bcrypt.compare(password, user.password);
     if (isMatch) {
       const token = createToken(user._id);
       res.json({ success: true, token });
     } else {
-      res.json({ success: false });
+      res.json({ success: false, message: 'Invalid Credentials' });
     }
   } catch (error) {
-    
+    console.log(error);
+    res.json({ success: false, message: error.message });
   }
 };
 
@@ -66,7 +66,7 @@ const registerUser = async (req, res) => {
 
     const token = createToken(user._id);
 
-    res.json({ seccess: true, token });
+    res.json({ success: true, token });
   } catch (error) {
     console.log(error);
     res.json({ success: false, message: error.message });
