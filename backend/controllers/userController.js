@@ -22,13 +22,12 @@ const loginUser = async (req, res) => {
       const token = createToken(user._id);
       res.json({ success: true, token });
     } else {
-      res.json({ success: false, message: 'Invalid Credentials' });
+      res.json({ success: false, message: "Invalid Credentials" });
     }
   } catch (error) {
     console.log(error);
     res.json({ success: false, message: error.message });
   }
-  
 };
 
 //user registration
