@@ -19,6 +19,7 @@ app.use(express.json());
 app.use(cors());
 
 //API endpoints
+
 app.use("/api/user", userRouter);
 app.use("/api/product", productRouter);
 
