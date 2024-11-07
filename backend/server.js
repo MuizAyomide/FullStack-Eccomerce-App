@@ -10,6 +10,7 @@ import productRouter from "./routes/productRoute.js";
 
 const app = express();
 const port = process.env.PORT || 4000;
+
 connectDB();
 connectCloudinary();
 
